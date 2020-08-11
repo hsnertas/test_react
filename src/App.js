@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Layout, Header, Navigation, Content} from 'react-mdl';
+import {Link} from 'react-router-dom';
 import './App.css';
-
+import Main from './components/main';
+import Footer from "./components/footer";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+<div style={{height: '300px', position: 'relative'}}>
+    <Layout fixedHeader>
+        <Header className='header-color' title={<span><span style={{ color: '#ddd' }}>Hasan Ertas / </span><strong>Full Stack Devloper</strong></span>}>
+            <Navigation>
+                
+                <Link to="/">Home</Link>
+                <Link to="/project">Projects</Link>
+                <Link to="/contact">Contact</Link>
+            </Navigation>
+        </Header>
+       
+        <Content>
+            <Main/>
+            <Footer>Made with love by Hasan Ertas</Footer>
+        </Content>
+    </Layout>
+</div>
   );
 }
 
